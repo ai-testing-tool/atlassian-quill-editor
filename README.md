@@ -113,6 +113,14 @@ npm run release:dry
 npm run release   # requires NPM_TOKEN in .env
 ```
 
+New `@ai-testing-tool/*` packages may sit in npm **staged publishing** review (`0.0.0-stage` placeholder) for a while before the real version is public. Until then, local installs can use:
+
+```bash
+npm install ../atlassian-adf-lite
+```
+
+Storybook deploys to GitHub Pages via `.github/workflows/storybook.yml` (enable Pages → GitHub Actions in repo settings).
+
 ## Known Quill limits
 
 - Deeply nested lists may flatten on round-trip.

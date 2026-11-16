@@ -10,5 +10,5 @@
     "types": []
   },
   "include": ["src"],
-  "exclude": ["src/**/*.test.ts", "demo", "test"]
+  "exclude": ["src/**/*.test.ts", "src/stories", "demo", "test"]
 }
