@@ -113,13 +113,9 @@ npm run release:dry
 npm run release   # requires NPM_TOKEN in .env
 ```
 
-New `@ai-testing-tool/*` packages may sit in npm **staged publishing** review (`0.0.0-stage` placeholder) for a while before the real version is public. Until then, local installs can use:
+Local/CI installs `@ai-testing-tool/atlassian-adf-lite` from `file:../atlassian-adf-lite` until the npm staged review clears; then switch the dependency to `^0.1.3` and republish.
 
-```bash
-npm install ../atlassian-adf-lite
-```
-
-Storybook deploys to GitHub Pages via `.github/workflows/storybook.yml` (enable Pages → GitHub Actions in repo settings).
+Storybook deploys via [`.github/workflows/storybook.yml`](.github/workflows/storybook.yml) (checks out + builds adf-lite alongside). Enable **Settings → Pages → Source: GitHub Actions**.
 
 ## Known Quill limits
 

@@ -2,6 +2,8 @@ node_modules
 dist
 dist-demo
 storybook-static
+# CI checkouts adf-lite here; never commit a nested clone.
+atlassian-adf-lite
 *.log
 .DS_Store
 .idea
