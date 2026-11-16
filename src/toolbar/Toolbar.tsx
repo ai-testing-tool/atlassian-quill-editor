@@ -166,26 +166,26 @@ export function Toolbar({
       </Btn>
       <Sep />
       <Btn title="Bullet list" disabled={disabled} active={isActive(quill, 'list', 'bullet')} onClick={() => toggle(quill, 'list', 'bullet')}>
-        • List
+        •
       </Btn>
       <Btn title="Numbered list" disabled={disabled} active={isActive(quill, 'list', 'ordered')} onClick={() => toggle(quill, 'list', 'ordered')}>
-        1. List
+        1.
       </Btn>
       <Btn title="Blockquote" disabled={disabled} active={isActive(quill, 'blockquote')} onClick={() => toggle(quill, 'blockquote')}>
-        Quote
+        “”
       </Btn>
       <Btn title="Code block" disabled={disabled} active={Boolean(quill?.getFormat()['code-block'])} onClick={() => toggle(quill, 'code-block')}>
-        Code
+        {'{ }'}
       </Btn>
       <Sep />
       <Btn title="Info panel" disabled={disabled} onClick={() => insertPanel('info')}>
         Panel
       </Btn>
       <Btn title="Expand" disabled={disabled} onClick={insertExpand}>
-        Expand
+        ▸
       </Btn>
       <Btn title="Table" disabled={disabled} onClick={insertTable}>
-        Table
+        ⊞
       </Btn>
       <Btn title="Divider" disabled={disabled} onClick={insertRule}>
         —
@@ -198,12 +198,12 @@ export function Toolbar({
       ) : null}
       {onInsertStatus ? (
         <Btn title="Status" disabled={disabled} onClick={onInsertStatus}>
-          Status
+          ●
         </Btn>
       ) : null}
       {onInsertMedia ? (
         <Btn title="Media" disabled={disabled} onClick={onInsertMedia}>
-          Media
+          ▭
         </Btn>
       ) : null}
     </div>

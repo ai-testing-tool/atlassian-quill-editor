@@ -25,19 +25,39 @@
 }
 
 .aqe-toolbar {
-  @apply aqe-flex aqe-flex-wrap aqe-items-center aqe-gap-1 aqe-border-b aqe-border-adf-border aqe-bg-slate-50 aqe-px-2 aqe-py-1.5;
+  @apply aqe-flex aqe-flex-wrap aqe-items-center aqe-gap-0.5 aqe-border-b aqe-border-adf-border aqe-bg-slate-50 aqe-px-2 aqe-py-1.5;
 }
 
+/* preflight is off — reset UA <button> chrome so Tailwind layout wins */
 .aqe-toolbar-btn {
-  @apply aqe-inline-flex aqe-h-8 aqe-min-w-8 aqe-items-center aqe-justify-center aqe-rounded aqe-px-2 aqe-text-xs aqe-font-medium aqe-text-slate-700 hover:aqe-bg-slate-200 disabled:aqe-opacity-40;
+  appearance: none;
+  margin: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  @apply aqe-inline-flex aqe-h-8 aqe-min-w-8 aqe-items-center aqe-justify-center aqe-rounded aqe-px-2 aqe-text-xs aqe-font-medium aqe-text-slate-700;
+}
+
+.aqe-toolbar-btn:hover:not(:disabled) {
+  @apply aqe-border-adf-border aqe-bg-white;
+}
+
+.aqe-toolbar-btn:disabled {
+  @apply aqe-cursor-default aqe-opacity-40;
 }
 
 .aqe-toolbar-btn.is-active {
-  @apply aqe-bg-slate-800 aqe-text-white hover:aqe-bg-slate-800;
+  @apply aqe-border-slate-800 aqe-bg-slate-800 aqe-text-white;
+}
+
+.aqe-toolbar-btn.is-active:hover:not(:disabled) {
+  @apply aqe-border-slate-800 aqe-bg-slate-800 aqe-text-white;
 }
 
 .aqe-toolbar-sep {
-  @apply aqe-mx-1 aqe-h-5 aqe-w-px aqe-bg-adf-border;
+  @apply aqe-mx-1 aqe-h-5 aqe-w-px aqe-shrink-0 aqe-self-center aqe-bg-adf-border;
 }
 
 .aqe-editor-host {
