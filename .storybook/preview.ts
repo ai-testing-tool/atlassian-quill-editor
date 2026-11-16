@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react';
 import '../src/styles.css';
 
 const preview: Preview = {
+  // Quill attaches to a DOM node; StrictMode double-mount breaks the editor in docs/canvas.
   parameters: {
     layout: 'padded',
     controls: {

@@ -43,10 +43,14 @@ export function AdfEditor({
   }, [readOnly]);
 
   useEffect(() => {
-    if (!hostRef.current || quillRef.current) return;
+    const host = hostRef.current;
+    if (!host) return;
+
+    // React StrictMode remounts: clear any previous Quill DOM before re-init.
+    host.replaceChildren();
+    quillRef.current = null;
 
     const QuillCtor = registerAdfQuill();
-    const host = hostRef.current;
     const instance = new QuillCtor(host, {
       theme: undefined,
       placeholder,
@@ -112,6 +116,8 @@ export function AdfEditor({
 
     return () => {
       host.removeEventListener('input', onHostInput);
+      instance.off('text-change');
+      host.replaceChildren();
       quillRef.current = null;
       setQuill(null);
     };
