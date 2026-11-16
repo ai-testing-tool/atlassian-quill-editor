@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# atlassian-quill-editor
+
+React Quill editor that round-trips [Atlassian Document Format (ADF)](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/) for Jira Cloud descriptions and comments.
+
+## Quick start
+
+```tsx
+import { AdfEditor } from 'atlassian-quill-editor';
+import 'atlassian-quill-editor/styles.css';
+
+<AdfEditor value={doc} onChange={setDoc} />
+```
+
+## Story catalog
+
+### AdfEditor
+
+Composite examples: empty, full Jira description, comment, read-only.
+
+### ADF / Nodes
+
+One story per documented node:
+
+`doc`, `paragraph`, `text`, `heading`, `hardBreak`, `blockquote`, `bulletList`, `orderedList`, `listItem`, `codeBlock`, `rule`, `panel`, `expand`, `nestedExpand`, `mention`, `status`, `emoji`, `date`, `inlineCard`, `media`, `mediaSingle`, `mediaGroup`, `table`, `tableRow`, `tableHeader`, `tableCell`
+
+### ADF / Marks
+
+One story per documented mark:
+
+`strong`, `em`, `strike`, `underline`, `code`, `link`, `textColor`, `backgroundColor`, `subsup` (+ combined)
+
+Each story shows the live editor and the emitted ADF JSON.

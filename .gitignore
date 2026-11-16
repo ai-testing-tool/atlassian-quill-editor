@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-demo
+storybook-static
+*.log
+.DS_Store
+.idea
+*.local
+coverage
+*storybook.log
+.env
+.npmrc
+*.tgz
+
+*storybook.log
